@@ -1,0 +1,87 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-obsidian: #050505;
+    --bg-surface: #0b0b0e;
+    --bg-elevated: #121217;
+    --border-hairline: rgba(255, 255, 255, 0.07);
+    --nexus-red: #e11d2e;
+    --nexus-red-muted: rgba(225, 29, 46, 0.16);
+    --text-primary: #f5f5f7;
+    --text-secondary: #9a9aa6;
+    --text-muted: #5e5e6a;
+  }
+
+  * {
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+    background-color: #050505;
+    color: #f5f5f7;
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+    letter-spacing: 0.01em;
+  }
+
+  .font-mono-tabular {
+    font-family: 'JetBrains Mono', monospace;
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+@keyframes nexus-breathe {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.92;
+  }
+  50% {
+    transform: scale(1.028);
+    opacity: 1;
+  }
+}
+
+@keyframes nexus-thinking-orbit {
+  0% {
+    transform: rotate(0deg) scale(1);
+    opacity: 0.45;
+  }
+  50% {
+    transform: rotate(180deg) scale(1.04);
+    opacity: 0.85;
+  }
+  100% {
+    transform: rotate(360deg) scale(1);
+    opacity: 0.45;
+  }
+}
+
+.animate-nexus-breathe {
+  animation: nexus-breathe 5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+.animate-nexus-thinking {
+  animation: nexus-thinking-orbit 6s linear infinite;
+}
+
+/* Custom quiet scrollbar */
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 9999px;
+}
